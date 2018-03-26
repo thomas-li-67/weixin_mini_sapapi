@@ -1,0 +1,19 @@
+/* pages/kcsj/kcsj.wxss */
+.searchIcon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.searchForm {
+  width: 80%;
+}
+
+.left {
+  align-items: left;
+}
+
+.right {
+  align-items: right;
+}
+

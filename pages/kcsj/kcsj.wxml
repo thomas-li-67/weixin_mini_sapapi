@@ -1,0 +1,24 @@
+<view class="container">
+    <view class="searchForm">
+        <form bindsubmit="formSubmit" bindreset="formReset">
+        <view class="section">
+            <text class="left"  bindtap="scanqr" >输入物料号或“扫一扫”</text>
+
+            <input name=input" bindblur="bindMatInput" placeholder="000000000000000000"  value="{{input}}"/> 
+          </view>  
+          <view class="searchIcon">
+            <icon bindtap="searchMat" type="search" size="40" />
+          </view>
+        </form>
+    </view> 
+<view class="container kcsj-list">
+  <block wx:for="{{kcsj_table}}" wx:for-item="row">
+    <text class="kcsj-item">{{index + 1}}. {{row.MAKTX}}</text>
+
+    <text class="kcsj-item">计量单位：{{row.MEINS}}</text>
+    <text class="kcsj-item">库存    ：{{row.WESPB}}</text>
+    <text class="kcsj-item">库存地点：{{row.LGORT}}</text>
+    <text class="kcsj-item">工厂    ：{{row.WERKS}}</text>
+  </block>
+</view> 
+</view>
