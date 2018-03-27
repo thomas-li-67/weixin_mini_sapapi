@@ -1,0 +1,21 @@
+<!--pages/result.wxml-->
+<view class="page">
+  <view class="page__hd">
+    <view class="page__title">查询结果</view>
+  </view>
+  <view class="page__bd">
+    <view class="weui-article">
+      <view class="kcsj-list weui-article__section">
+        <block wx:for="{{kcsj_table}}" wx:for-item="row">
+          <view class="kcsj-item weui-article__h3">{{index + 1}}. {{row.MAKTX}}</view>
+          <view class="weui-article__p">
+            <view class="kcsj-item">计量单位：{{row.MEINS}}</view>
+            <view class="kcsj-item">库存    ：{{row.WESPB}}</view>
+            <view class="kcsj-item">库存地点：{{row.LGORT}}</view>
+            <view class="kcsj-item">工厂    ：{{row.WERKS}}</view>
+          </view>
+        </block>
+      </view>
+    </view>
+  </view>
+</view>

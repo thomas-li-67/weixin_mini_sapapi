@@ -1,17 +1,36 @@
 <!--index.wxml-->
 <view class="page">
-    <view class="page__hd">
-        <view class="page__title">Demo页</view>
-        <view class="userinfo">
-          <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-          <block wx:else>
-            <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-            <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-          </block>
-        </view>
-        <view class="usermotto">
-          <text class="user-motto">{{motto}}</text>
-        </view>
-        <view class="page__desc">底部导航，建议采用小程序原生的tabbar，通过设置app.json来实现。详情请看小程序文档。</view>
+  <view class="page__hd">
+    <view class="userinfo">
+      <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+      <block wx:else>
+        <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+        <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      </block>
     </view>
+    <view class="usermotto">
+      <image bindtap="scanqr" class="scan-avatar" src="../images/scan.png" background-size="cover"></image>
+      <view bindtap="scanqr">扫码查询</view>
+      <view class="scan-motto">
+       <view class="weui-search-bar">
+            <view class="weui-search-bar__form">
+                <view class="weui-search-bar__box">
+                    <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+                    <input bindconfirm="searchMat" type="text" class="weui-search-bar__input" placeholder="手动输入编码..." value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
+                    <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+                        <icon type="clear" size="14"></icon>
+                    </view>
+                </view>
+                <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+                    <icon class="weui-icon-search" type="search" size="14"></icon>
+                    <view class="weui-search-bar__text">手动输入编码...</view>
+                </label>
+            </view>
+            <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
+        </view>
+        
+      </view>
+    </view>
+
+  </view>
 </view>

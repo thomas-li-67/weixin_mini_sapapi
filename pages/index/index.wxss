@@ -13,17 +13,35 @@
   border-radius: 50%;
 }
 
+.scan-avatar {
+  width: 178rpx;
+  height: 178rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
 .userinfo-nickname {
   color: #aaa;
 }
 
 .usermotto {
-  margin: 200px 20px;
+  margin: 100px 20px;
   align-items: center;
   text-align: center;
+}
+
+.scan-motto{
+  padding-top:50px;
+  color: #4780bf;
+  
 }
 
 .survey-text {
   padding-bottom: 10px;
   display: block;
+}
+
+.weui-search-bar{
+  border-width: 0px;
+  margin:0px -20px;
 }

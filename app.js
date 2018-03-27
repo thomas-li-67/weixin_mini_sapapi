@@ -38,6 +38,7 @@ App({
   globalData: {
     userInfo: null,
     getSettingRes: null,
+    kcsj_table:null,
     loginRes: null
   }
 })

@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/logs/logs",
     "pages/kcsj/kcsj",
-    "pages/demo/demo"
+    "pages/demo/demo",
+    "pages/result"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -11,7 +12,7 @@
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle": "black"
   },
-  "tabBar": {
+  "tabBar-note": {
     "color": "#7A7E83",
     "selectedColor": "#3cc51f",
     "borderStyle": "black",
