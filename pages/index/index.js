@@ -23,7 +23,7 @@ Page({
       url: '../demo/demo'
     })
   },
-  onLoad: function () {
+  onLoad: function (options) {
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -50,7 +50,16 @@ Page({
         }
       })
     }
+    if(options != null) {
+       console.log(options)
+       var mat = options["mat"]
+       if (typeof(mat) != "undefined" || mat != null) {
+         console.log("search material no: " + mat)
+         this.getKcsj(mat, '2771')
+       }
+    }
   },
+  
   getUserInfo: function(e) {
     console.log(e)
     app.globalData.userInfo = e.detail.userInfo
